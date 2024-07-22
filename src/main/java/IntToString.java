@@ -23,5 +23,4 @@ public class IntToString {
     }
 }
 
-//The following class will prevent you from terminating the code using exit(0)!
-}
+
