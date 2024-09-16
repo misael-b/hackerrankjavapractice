@@ -24,26 +24,40 @@ public class FindingScoreboardPosition {
 
         List<Integer> finalStanding = new ArrayList<>();
 
-        for(int score : player){
-            for(int i = 0; i<ranked.size(); i++){
-                if(ranked.get(i) <= score){
-                    int rank = ranking.get(i);
-                    finalStanding.add(rank);
-                    break;
-                }
-                if(i == ranked.size()-1){
-                    finalStanding.add(ranking.get(i) +1);
-                }
+        int middle = ranked.get(ranked.size()/2);
+        System.out.println(middle);
 
+        for(int score : player){
+            if(score >= middle){
+                for(int i = 0; i<ranked.size(); i++){
+                    if(ranked.get(i) <= score){
+                        int rank = ranking.get(i);
+                        finalStanding.add(rank);
+                        break;
+                    }
+
+                }
+            }else{
+                for(int i = ranked.size()-1; i>0; i--){
+                    if(ranked.get(i) > score){
+                        int rank = ranking.get(i)+1;
+                        finalStanding.add(rank);
+                        break;
+                    }
+
+
+                }
             }
+
+
         }
         return finalStanding;
 
     }
 
     public static void main(String[] args) throws IOException {
-        List<Integer> rankingScores = Arrays.asList(100, 90, 90, 80, 75, 60);
-        List<Integer> playerScores = Arrays.asList(50,65, 77, 90, 102);
+        List<Integer> rankingScores = Arrays.asList(1);
+        List<Integer> playerScores = Arrays.asList(1,1);
 
         System.out.println(climbingLeaderboard(rankingScores, playerScores));;
     }
