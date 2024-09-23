@@ -6,3 +6,13 @@ SELECT NAME FROM CITY WHERE COUNTRYCODE = 'JPN';
 
 SELECT CITY, STATE FROM STATION;
 
+SELECT DISTINCT CITY FROM STATION WHERE (mod(ID, 2) =0);
+SELECT DISTINCT CITY FROM STATION WHERE (ID%2 = 0); --mySQL
+-- DISTINCT : select unique values
+-- mod(number, divideByNumber)
+
+SELECT
+(SELECT COUNT(CITY) FROM STATION) -
+(SELECT COUNT(DISTINCT CITY) FROM STATION);
+--use SELECT () - () to subtract two counts
+-- use COUNT() to count number  of columns
