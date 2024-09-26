@@ -206,3 +206,15 @@ ON Orders.CustomerID = Customers.CustomerID;
 -- JOIN clause to join the two tables Orders and Customers,
 -- using the CustomerID field in both tables as the relationship between the two tables
 
+
+SELECT CONCAT(NAME, '(',SUBSTRING(OCCUPATION, 1,1), ')') FROM OCCUPATIONS ORDER BY NAME;
+-- Query an alphabetically ordered list of all names in OCCUPATIONS,
+-- immediately followed by the first letter of each profession as a parenthetical
+-- Ex: AnActorName(A), ADoctorName(D), etc.
+
+SELECT CONCAT('There are a total of ', COUNT(OCCUPATION), ' ',  LOWER(OCCUPATION), 's.') FROM OCCUPATIONS GROUP BY OCCUPATION ORDER BY COUNT(OCCUPATION), OCCUPATION;
+-- Query the number of ocurrences of each occupation in OCCUPATIONS.
+-- Sort the occurrences in ascending order, and output them in the following format:
+        -- There are a total of [occupation_count] [occupation]s.
+
+
