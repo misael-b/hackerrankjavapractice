@@ -155,5 +155,54 @@ FROM TRIANGLES;
 --  END
 
 
+--LIKE:
+-- SELECT column1, column2, ...
+-- FROM table_name
+-- WHERE columnN LIKE pattern;
 
+--Finds any values that start with "a" :
+SELECT * FROM TABLE1 WHERE NAME LIKE 'a%';
+
+
+
+
+-- % represents zero or more characters
+-- _ represents a single character
+
+
+
+
+SELECT * FROM Customers WHERE CITY LIKE '%a';
+-- Select all records where the value of the City column ends with the letter "a".
+
+
+
+SELECT * FROM Customers WHERE City NOT LIKE 'a%'
+-- Select all records where the value of the City column does NOT start with the letter "a".
+
+
+
+SELECT * FROM Customers WHERE COUNTRY IN ('Norway', 'France');
+-- Use the IN operator to select all the records where Country is either "Norway" or "France".
+
+
+
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20;
+--Use the BETWEEN operator to select all the records where the value of the Price column is between 10 and 20.
+
+
+SELECT CustomerName,Address,PostalCode AS Pno
+FROM Customers;
+-- When displaying the Customers table, make an ALIAS of the PostalCode column, the column should be called Pno instead.
+
+
+
+Joins :
+
+SELECT *
+FROM Orders
+LEFT JOIN Customers
+ON Orders.CustomerID = Customers.CustomerID;
+-- JOIN clause to join the two tables Orders and Customers,
+-- using the CustomerID field in both tables as the relationship between the two tables
 
