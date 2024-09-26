@@ -130,5 +130,30 @@ SELECT NAME FROM STUDENTS WHERE MARKS > 75 ORDER BY SUBSTRING(NAME, -3, 3) ASC, 
 -- Secondary sort them by ascending ID
 
 
+SELECT NAME FROM EMPLOYEE ORDER BY NAME ASC;
+-- query that prints a list of employee names in alphabetical order
+
+SELECT NAME FROM EMPLOYEE WHERE (SALARY > 2000) AND MONTHS < 10 ORDER BY EMPLOYEE_ID;
+-- query that prints a list of employee names for employees having:
+-- a salary greater than 2000 per month
+-- have been employees for less than 10 months
+-- Sort your result by ascending employee_id
+
+SELECT
+CASE
+    WHEN (A+B<=C) THEN "Not A Triangle"
+    WHEN (A = B AND B = C)THEN "Equilateral"
+    WHEN (A = B OR B = C OR A=C) THEN "Isosceles"
+    ELSE "Scalene"
+END
+FROM TRIANGLES;
+
+-- CASE if else statement -->
+--  CASE
+--      WHEN (CONDITION) THEN (OUTPUT)
+--      WHEN (CONDITION) THEN (OUTPUT)
+--  END
+
+
 
 
