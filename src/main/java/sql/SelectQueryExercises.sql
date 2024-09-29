@@ -227,3 +227,15 @@ SELECT SUM(POPULATION) FROM CITY WHERE DISTRICT= 'California';
 
 SELECT AVG(POPULATION) FROM CITY WHERE DISTRICT = 'California';
 --Query the average population of all cities in CITY where District is California.
+
+SELECT ROUND(AVG(POPULATION)) FROM CITY;
+-- Query the average population for all cities in CITY, rounded down to the nearest integer.
+-- Use ROUND to round to to number of decimals
+-- Ex. ROUND(number, decimals);
+
+SELECT SUM(POPULATION) FROM CITY WHERE COUNTRYCODE = 'JPN';
+-- Query the sum of the populations for all Japanese cities in CITY. The COUNTRYCODE for Japan is JPN.
+
+SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY;
+-- Query the difference between the maximum and minimum populations in CITY.
+
