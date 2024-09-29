@@ -218,3 +218,12 @@ SELECT CONCAT('There are a total of ', COUNT(OCCUPATION), ' ',  LOWER(OCCUPATION
         -- There are a total of [occupation_count] [occupation]s.
 
 
+SELECT COUNT(ID) FROM CITY WHERE POPULATION > 100000;
+-- Query a count of the number of cities in CITY having a Population larger than 100,000.
+
+
+SELECT SUM(POPULATION) FROM CITY WHERE DISTRICT= 'California';
+-- Query the total population of all cities in CITY where District is California.
+
+SELECT AVG(POPULATION) FROM CITY WHERE DISTRICT = 'California';
+--Query the average population of all cities in CITY where District is California.
