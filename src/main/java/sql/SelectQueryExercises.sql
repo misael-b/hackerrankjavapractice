@@ -249,4 +249,6 @@ SELECT CEIL((AVG(Salary)) - AVG(REPLACE(Salary,0,""))) FROM EMPLOYEES;
 -- substring 	Required. The substring to be replaced
 -- new_string 	Required. The new replacement substring
 
+SELECT MAX(salary*months), COUNT(employee_id) FROM Employee WHERE salary*months = (SELECT MAX(salary*months) FROM EMPLOYEE);
+-- find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings
 
