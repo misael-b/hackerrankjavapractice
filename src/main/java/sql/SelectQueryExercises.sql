@@ -239,3 +239,14 @@ SELECT SUM(POPULATION) FROM CITY WHERE COUNTRYCODE = 'JPN';
 SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY;
 -- Query the difference between the maximum and minimum populations in CITY.
 
+
+SELECT CEIL((AVG(Salary)) - AVG(REPLACE(Salary,0,""))) FROM EMPLOYEES;
+-- Samantha was tasked with calculating the average monthly salaries for all employees,
+-- but did not realize her keyboard's key was broken until after completing the calculation
+-- find the difference between her miscalculation (using salaries with any zeros removed), and the actual average salary
+-- REPLACE(string, substring, new_string)
+-- string 	    Required. The original string
+-- substring 	Required. The substring to be replaced
+-- new_string 	Required. The new replacement substring
+
+
