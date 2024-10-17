@@ -286,3 +286,10 @@ ON CITY.CountryCode = COUNTRY.Code
 WHERE CONTINENT = 'Asia';
 -- Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
 -- CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT CITY.NAME FROM CITY
+INNER JOIN COUNTRY
+ON CITY.CountryCode = COUNTRY.Code
+WHERE COUNTRY.CONTINENT = "Africa";
+-- Query the names of all cities where the CONTINENT is 'Africa'
+-- CITY.CountryCode and COUNTRY.Code are matching key columns
